@@ -1,0 +1,9 @@
+from pyngrok import ngrok
+
+# 8501번 포트로 ngrok 터널을 엽니다.
+public_url = ngrok.connect(8501)
+print("🎉 대시보드가 준비되었습니다! 아래 URL을 클릭하여 접속하세요! 🎉")
+print(public_url)
+
+# 백그라운드에서 Streamlit 앱을 실행합니다.
+!streamlit run dashboard.py --server.port 8501
